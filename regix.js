@@ -1,13 +1,14 @@
 document.getElementById('btn').addEventListener('click',function(){
 
 
-
+    let a = true ;
    //fisrtname
     var firstname = document.getElementById('firstname').value;
     var regex = /^[a-z]{1,30}$/ig;
     if(firstname === '') {
         document.getElementById('name').innerHTML = 'Nome is required.';
         document.getElementById('firstname').style.borderColor="red";
+        a = false
 
     } else if (regex.test(firstname)) {
         document.getElementById('name').innerHTML = '';
@@ -16,10 +17,12 @@ document.getElementById('btn').addEventListener('click',function(){
        
     } else if (firstname.length>30){
         document.getElementById('name').innerHTML = 'where are u goin';
+        a = false
         
     } else {
         document.getElementById('name').innerHTML = 'dont use numers or chifre';
         document.getElementById('firstname').style.borderColor="red";
+        a = false
 
        
     }
@@ -30,6 +33,7 @@ document.getElementById('btn').addEventListener('click',function(){
     if(lastname === '') {
         document.getElementById('namelast').innerHTML = 'Nome is required.';
         document.getElementById('lastname').style.borderColor="red";
+        a = false
 
     } else if (regex.test(lastname)) {
         document.getElementById('namelast').innerHTML = '';
@@ -38,10 +42,12 @@ document.getElementById('btn').addEventListener('click',function(){
        
     } else if (lastname.length>30){
         document.getElementById('namelast').innerHTML = 'where are u goin';
+        a = false
         
     } else {
         document.getElementById('namelast').innerHTML = 'dont use numers or chifre';
         document.getElementById('lastname').style.borderColor="red";
+        a = false
 
        
     }
@@ -52,6 +58,7 @@ document.getElementById('btn').addEventListener('click',function(){
     if(email === '') {
         document.getElementById('paraemail').innerHTML = 'Email is required.';
         document.getElementById('email').style.borderColor="red";
+        a = false
 
     } else if (regex.test(email)) {
         document.getElementById('paraemail').innerHTML = '';
@@ -60,6 +67,7 @@ document.getElementById('btn').addEventListener('click',function(){
     } else {
         document.getElementById('paraemail').innerHTML = 'Email Non Valid.';
         document.getElementById('email').style.borderColor="red";
+        a = false
          
      
     }
@@ -69,6 +77,7 @@ document.getElementById('btn').addEventListener('click',function(){
     if(telephone === '') {
         document.getElementById('paratele').innerHTML = 'Telephone is required.';
         document.getElementById('telephone').style.borderColor="red";
+        a = false
 
     } else if (regex.test(telephone)) {
         document.getElementById('paratele').innerHTML = '';
@@ -77,10 +86,12 @@ document.getElementById('btn').addEventListener('click',function(){
         
     } else if (telephone.length>10){
         document.getElementById('paratele').innerHTML = 'just 10 chiffres.';
+        a = false
     }
     else {
         document.getElementById('paratele').innerHTML = 'Telephone Non Valid.';
         document.getElementById('telephone').style.borderColor="red";
+        a = false
 
         
     }
@@ -91,6 +102,7 @@ document.getElementById('btn').addEventListener('click',function(){
         document.getElementById("paragenre").innerHTML = '';
     } else {
         document.getElementById("paragenre").innerHTML = "select something pls";
+        a = false
     }
 
 
@@ -123,6 +135,7 @@ document.getElementById('btn').addEventListener('click',function(){
     } 
     else {
         document.getElementById("AFFICHE").innerHTML = "SELECT SOMETHING"
+        a = false
     };
     // Clubs
     var clubs = document.getElementById("Club(s)-select");
@@ -136,12 +149,19 @@ document.getElementById('btn').addEventListener('click',function(){
             
         } else if (count === 0) {
             document.getElementById("paraclb").innerHTML = "select something";
+            a = false
            
            
         } else {
             document.getElementById("paraclb").innerHTML = "7adk 3 xd";
+            a = false
         
         }
     } 
+    if(a == true)
+    {
+        window.location.href = "finish.html"
+    }
+ }
 
-});
+);
